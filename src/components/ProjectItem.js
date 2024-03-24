@@ -1,15 +1,26 @@
 import React from "react";
 
-function ProjectItem({ name, about, technologies }) {
+function ColorList() {
+  const colors = [
+    "firebrick",
+    "rebeccapurple",
+    "salmon",
+    "darkslategray",
+    "hotpink",
+  ];
+
   return (
-    <div className="project-item">
-      <h3>{name}</h3>
-      <p>{about}</p>
-      <div className="technologies">
-        {/* render a <span> for each technology in the technologies array */}
-      </div>
+    <div>
+      <h1>Top 5 CSS Colors</h1>
+      <ol>
+        {colors.map((color, index) => (
+          <li key={index} style={{ color: color }}>
+            {color}
+          </li>
+        ))}
+      </ol>
     </div>
   );
 }
 
-export default ProjectItem;
+export default ColorList;
